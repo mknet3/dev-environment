@@ -22,7 +22,9 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ghcr.io/${{ github.repository }}:${{ github.sha }}
+          images: ghcr.io/${{ github.repository }}
+          tags: |
+            type=sha
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
