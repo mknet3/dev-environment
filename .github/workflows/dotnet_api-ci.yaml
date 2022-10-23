@@ -29,4 +29,6 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
+          file: applications/dotnet-api/Demo/Dockerfile
+          context: applications/dotnet-api
           tags: ${{ steps.meta.outputs.tags }}
